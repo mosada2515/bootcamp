@@ -439,7 +439,7 @@ export default function Home() {
                       Founding cohort price
                     </div>
                     <div className="mt-2 flex flex-wrap items-end gap-4">
-                      <span className="text-6xl font-medium text-[#F3F1DF]">$1250</span>
+                      <span className="text-6xl font-medium text-[#F3F1DF]">$750</span>
                       <span className="pb-2 text-2xl text-[#E1E0CC]/38 line-through">
                         $1500
                       </span>
