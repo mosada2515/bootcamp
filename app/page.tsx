@@ -36,20 +36,21 @@ const fadeUp = {
 
 const credibility = [
   "Built by Studio RTF",
-  "Real client-style projects",
+  "Real business-agent projects",
   "4 weeks",
-  "Top performers may be considered for paid work",
+  "Portfolio-ready agent systems",
+  "Mentor-reviewed builds",
   "Founding cohort",
 ];
 
 const featuredAudience = {
-  tag: "Selection",
+  tag: "Builder Program",
   date: "APPLICATION-BASED",
-  title: "Ambitious students who want to work around AI startups",
+  title: "Ambitious builders who want practical AI agent experience",
   description:
-    "This fellowship is for people who want real pressure, fast feedback, and a serious environment where the work speaks louder than credentials.",
+    "This fellowship is for students, operators, and technical builders who want to ship real agent projects, build a sharper portfolio, and learn the systems Studio RTF uses in client work.",
   href: "#apply",
-  readMoreText: "Apply for consideration",
+  readMoreText: "Apply for the fellowship",
   imageUrl:
     "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop",
 };
@@ -58,9 +59,9 @@ const audienceCards = [
   {
     tag: "Technical",
     date: "CS STUDENTS",
-    title: "CS students who want real-world AI experience",
+    title: "CS students who want real-world AI agent experience",
     description:
-      "You know the fundamentals and want to apply them to agent workflows, client constraints, integrations, and production-style judgment.",
+      "You know the fundamentals and want to apply them to production-style agent workflows, integrations, and business constraints.",
     href: "#apply",
   },
   {
@@ -68,7 +69,7 @@ const audienceCards = [
     date: "OPERATORS",
     title: "Technical business students",
     description:
-      "You understand markets and workflows, but you also want the build fluency to prototype agents that solve operational problems.",
+      "You understand markets and workflows, and want the build fluency to prototype agents that solve real operational problems.",
     href: "#apply",
   },
   {
@@ -76,7 +77,7 @@ const audienceCards = [
     date: "NO-CODE BUILDERS",
     title: "No-code and automation builders",
     description:
-      "You move quickly with tools, APIs, and systems, and want sharper patterns for building reliable AI-driven workflows.",
+      "You move quickly with tools, APIs, and systems, and want stronger patterns for reliable AI-driven business workflows.",
     href: "#apply",
   },
   {
@@ -84,7 +85,7 @@ const audienceCards = [
     date: "DESIGNERS",
     title: "Designers and product thinkers who can ship",
     description:
-      "You bring taste, UX instincts, and product judgment, then prove it by building working agent experiences every week.",
+      "You bring taste, UX instincts, and product judgment, then prove it by shipping working agent experiences every week.",
     href: "#apply",
   },
 ];
@@ -124,7 +125,7 @@ const buildFeatures = [
     icon: Bot,
     title: "Final vertical-specific capstone",
     description:
-      "Ship a focused agent for one business vertical and demo the judgment behind every workflow decision.",
+      "Ship a focused business agent for one vertical and demo the strategy behind every workflow decision.",
   },
 ];
 
@@ -133,7 +134,7 @@ const roadmapItems = [
     quarter: "Week 1",
     title: "Agent fundamentals",
     description:
-      "LLMs, tools, memory, workflows, prompting as system design, and a simple lead qualification agent.",
+      "LLMs, tools, memory, workflows, prompting as system design, and a working lead qualification agent.",
     status: "done" as const,
   },
   {
@@ -154,7 +155,7 @@ const roadmapItems = [
     quarter: "Week 4",
     title: "Capstone and selection",
     description:
-      "Build a final business agent, demo it live, and get reviewed on technical ability and judgment.",
+      "Build a final business agent, demo it live, and get reviewed on execution, communication, reliability, and product judgment.",
     status: "upcoming" as const,
   },
 ];
@@ -162,10 +163,11 @@ const roadmapItems = [
 const pricingIncludes = [
   "4-week live cohort",
   "Weekly build assignments",
-  "Project reviews",
+  "Mentor project reviews",
   "Final demo day",
   "Access to Studio RTF-style agent frameworks and examples",
-  "Consideration for paid Studio RTF projects if performance is exceptional",
+  "A portfolio of practical AI agent projects",
+  "Optional consideration for paid Studio RTF projects for standout work",
 ];
 
 const criteria = [
@@ -175,7 +177,7 @@ const criteria = [
   "Reliability",
   "Product judgment",
   "Client-readiness",
-  "Hunger",
+  "Project quality",
 ];
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
@@ -266,7 +268,7 @@ export default function Home() {
 
       setSubmitStatus("success");
       setSubmitMessage(
-        "Application received. We'll review your application and reach out if there is a fit."
+        "Application received. We'll review your application and follow up with next steps."
       );
       form.reset();
     } catch (error) {
@@ -302,15 +304,15 @@ export default function Home() {
           <motion.div {...fadeUp}>
             <SectionLabel>Program</SectionLabel>
             <h2 className="max-w-2xl text-4xl font-medium leading-none text-[#F3F1DF] sm:text-5xl md:text-6xl">
-              Not a course. A builder selection environment.
+              A hands-on builder program for real business agents.
             </h2>
           </motion.div>
           <motion.div {...fadeUp} className="max-w-2xl lg:justify-self-end">
             <p className="text-lg leading-8 text-[#E1E0CC]/72 sm:text-xl">
-              This is a 4-week hands-on fellowship where students build
-              production-style AI agents for real business use cases: inbound lead
-              response, booking, follow-up, CRM updates, and human handoff workflows.
-              Every week, you ship.
+              This is a selective 4-week AI Agent Builder Fellowship where builders
+              ship production-style AI agents for real business workflows: inbound
+              lead response, booking, follow-up, CRM updates, and human handoff.
+              Every week, you build something portfolio-worthy.
             </p>
             <div className="mt-8 grid grid-cols-3 gap-6">
               {[
@@ -337,7 +339,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <SectionHeader
             label="Who It Is For"
-            title="Built for people who want to be evaluated by what they ship."
+            title="For ambitious builders who want practical AI agent reps."
           />
           <div className="mt-12 space-y-6">
             <motion.div {...fadeUp}>
@@ -374,8 +376,8 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <SectionHeader
             label="What You Build"
-            title="Real agent systems. Not toy demos."
-            copy="The fellowship is centered on business workflows that companies already need: fast response, clean handoffs, reliable updates, and agents that know when to stop."
+            title="Build AI agents businesses actually pay for."
+            copy="The fellowship is centered on business workflows companies already need: fast response, clean handoffs, reliable updates, automated follow-up, and agents that know when to escalate."
           />
           <motion.div {...fadeUp} className="mt-12">
             <div className="grid grid-cols-1 overflow-hidden rounded-3xl bg-[#E1E0CC]/[0.035] sm:grid-cols-2 md:grid-cols-3">
@@ -399,12 +401,12 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <SectionHeader
             label="Curriculum"
-            title="Four weeks from fundamentals to client-ready judgment."
+            title="Four weeks from fundamentals to portfolio-ready systems."
           />
           <motion.div {...fadeUp} className="mt-14 flex justify-center">
             <RoadmapCard
               title="Fellowship Roadmap"
-              description="The four-week sequence from agent fundamentals to capstone review."
+              description="The four-week sequence from agent fundamentals to a final business-agent capstone."
               items={roadmapItems}
             />
           </motion.div>
@@ -419,8 +421,8 @@ export default function Home() {
               Founding cohort access.
             </h2>
             <p className="mt-5 max-w-xl text-lg leading-8 text-[#E1E0CC]/68">
-              A small, high-touch cohort designed for serious builders who want direct
-              feedback, fast reps, and a portfolio of real business-agent work.
+              A small, high-touch cohort for serious builders who want mentorship,
+              fast reps, and a portfolio of real AI agent systems for business use cases.
             </p>
           </motion.div>
 
@@ -437,7 +439,7 @@ export default function Home() {
                       Founding cohort price
                     </div>
                     <div className="mt-2 flex flex-wrap items-end gap-4">
-                      <span className="text-6xl font-medium text-[#F3F1DF]">$1000</span>
+                      <span className="text-6xl font-medium text-[#F3F1DF]">$1250</span>
                       <span className="pb-2 text-2xl text-[#E1E0CC]/38 line-through">
                         $1500
                       </span>
@@ -504,13 +506,12 @@ export default function Home() {
                     <Field label="Why do you want to join?" name="whyJoin" textarea />
                   </div>
                   <label className="block text-sm text-[#E1E0CC]/78 sm:col-span-2">
-                    Are you interested in future paid Studio RTF project work?
+                    Optional: would you like to be considered for future paid Studio RTF projects if your work stands out?
                     <select
                       name="futureWork"
-                      required
                       className="mt-2 w-full rounded-2xl border border-[#E1E0CC]/14 bg-black/35 px-4 py-3 text-sm text-[#F3F1DF] outline-none transition-colors focus:border-[#9FD6C2]/70"
                     >
-                      <option value="">Select one</option>
+                      <option value="">No answer</option>
                       <option>Yes</option>
                       <option>Maybe</option>
                       <option>No</option>
@@ -554,13 +555,14 @@ export default function Home() {
             <motion.div {...fadeUp}>
               <SectionLabel>Opportunity</SectionLabel>
               <h2 className="text-4xl font-medium leading-none text-[#F3F1DF] sm:text-5xl">
-                The best builders do not just finish the program.
+                Build well first. Opportunities are a bonus.
               </h2>
               <p className="mt-5 text-lg leading-8 text-[#E1E0CC]/68">
-                We use the fellowship to discover serious builders. Top performers may
-                be considered for paid Studio RTF projects or future roles when there is
-                a fit. This is not a guaranteed job placement program - it is a real
-                environment to prove you can build.
+                Studio RTF builds real AI agents for businesses, and this fellowship
+                teaches the systems behind that work. We also use it to notice strong
+                builders. Top performers may be invited to paid Studio RTF projects
+                when there is a fit. This is not a job placement program or employment
+                promise.
               </p>
             </motion.div>
             <motion.div {...fadeUp} className="grid gap-3 sm:grid-cols-2">

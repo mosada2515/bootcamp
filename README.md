@@ -1,6 +1,6 @@
-# Studio RTF Agent Builder Fellowship
+# Studio RTF AI Agent Builder Fellowship
 
-Next.js App Router landing page for Studio RTF's AI Agent Builder Fellowship.
+Next.js App Router landing page for Studio RTF's selective AI Agent Builder Fellowship.
 
 ## Setup
 
@@ -14,7 +14,7 @@ This project is configured with TypeScript, Tailwind CSS, the App Router, and th
 
 ## Application Email
 
-The application form posts to `/api/apply` and sends submissions to `miki@studiortf.com` with Resend.
+The application form posts to `/api/apply` and sends Fellowship applications to `miki@studiortf.com` with Resend.
 
 Create `.env.local`:
 

@@ -21,8 +21,8 @@ export function SplineSceneBasic() {
           </h1>
           <p className="mt-5 max-w-lg text-sm leading-7 text-neutral-300 sm:text-base">
             The fellowship is not only about wiring automations together. It is about
-            turning invisible workflows into interfaces, demos, and systems that
-            clients can understand quickly.
+            turning invisible workflows into usable agent interfaces, demos, and
+            systems businesses can understand quickly.
           </p>
         </div>
 

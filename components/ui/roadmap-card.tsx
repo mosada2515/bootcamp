@@ -24,8 +24,8 @@ export interface RoadmapCardProps {
 }
 
 export function RoadmapCard({
-  title = "Product Roadmap",
-  description = "Upcoming features and releases",
+  title = "Fellowship Roadmap",
+  description = "Four weeks of practical agent builds, reviews, and a final capstone.",
   items,
 }: RoadmapCardProps) {
   return (

@@ -19,7 +19,6 @@ const requiredFields: Array<keyof ApplicationPayload> = [
   "technicalBackground",
   "builtBefore",
   "whyJoin",
-  "futureWork",
 ];
 
 export async function POST(request: Request) {
@@ -54,7 +53,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const subject = `New Fellowship application: ${payload.fullName}`;
+  const subject = `New AI Agent Builder Fellowship application: ${payload.fullName}`;
   const text = formatTextEmail(payload);
   const html = formatHtmlEmail(payload);
 
@@ -95,13 +94,13 @@ export async function POST(request: Request) {
 
 function formatTextEmail(payload: ApplicationPayload) {
   return [
-    "New Studio RTF Agent Builder Fellowship application",
+    "New Studio RTF AI Agent Builder Fellowship application",
     "",
     `Full name: ${payload.fullName}`,
     `Email: ${payload.email}`,
     `School/company: ${payload.schoolCompany}`,
     `Technical background: ${payload.technicalBackground}`,
-    `Interested in future paid Studio RTF project work: ${payload.futureWork}`,
+    `Optional paid Studio RTF project consideration: ${payload.futureWork || "Not answered"}`,
     "",
     "What have you built before?",
     payload.builtBefore,
@@ -117,14 +116,14 @@ function formatHtmlEmail(payload: ApplicationPayload) {
     ["Email", payload.email],
     ["School/company", payload.schoolCompany],
     ["Technical background", payload.technicalBackground],
-    ["Future paid project work interest", payload.futureWork],
+    ["Optional paid Studio RTF project consideration", payload.futureWork || "Not answered"],
     ["What have you built before?", payload.builtBefore],
     ["Why do you want to join?", payload.whyJoin],
   ];
 
   return `
     <div style="font-family: Arial, sans-serif; color: #111; line-height: 1.5;">
-      <h1 style="font-size: 22px;">New Studio RTF Agent Builder Fellowship application</h1>
+      <h1 style="font-size: 22px;">New Studio RTF AI Agent Builder Fellowship application</h1>
       <table cellpadding="0" cellspacing="0" style="width: 100%; border-collapse: collapse;">
         ${rows
           .map(

@@ -32,34 +32,34 @@ type FAQItem = {
 
 const content: FAQItem[] = [
   {
-    question: "Is this a job?",
+    question: "Is paid Studio RTF work guaranteed?",
     answer:
-      "No. This is a paid training fellowship. Top performers may be considered for paid Studio RTF projects, but work is not guaranteed.",
+      "No. This is a paid, hands-on AI Agent Builder Fellowship. Top performers may be invited to paid Studio RTF projects, but there is no guaranteed job, contract, or employment outcome.",
   },
   {
     question: "Do I need to be an expert coder?",
     answer:
-      "No, but you should be technical, fast-learning, and willing to build every week.",
+      "No, but you should be technical or semi-technical, fast-learning, and willing to ship real agent projects every week.",
   },
   {
     question: "Is this beginner-friendly?",
     answer:
-      "It is not for total beginners. It is for ambitious people who can learn quickly and ship.",
+      "It is not for total beginners. It is for ambitious builders who can learn quickly, work through ambiguity, and produce working systems.",
   },
   {
     question: "What will I leave with?",
     answer:
-      "Multiple AI agent projects, a final capstone, and a clearer understanding of how to build agents businesses actually pay for.",
+      "Multiple AI agent projects, a final portfolio capstone, and a practical understanding of how to build agent workflows businesses actually pay for.",
   },
   {
     question: "Why is it paid?",
     answer:
-      "Because it is high-touch, live, project-based, and designed to provide serious feedback and accountability.",
+      "Because it is high-touch, live, project-based, and built around mentorship, feedback, accountability, and real implementation reps.",
   },
   {
     question: "How many people are accepted?",
     answer:
-      "The founding cohort is intentionally small so we can evaluate builders closely.",
+      "The founding cohort is intentionally small so builders can get meaningful feedback and Studio RTF can keep the work practical.",
     link: "#apply",
   },
 ];
@@ -86,7 +86,7 @@ export default function FAQ() {
                       href={item.link}
                       className="mt-3 inline-flex items-center text-sm text-[#9FD6C2]/75 transition-opacity hover:text-[#9FD6C2]"
                     >
-                      Apply to the cohort <ArrowUpRight className="ml-1" size={16} />
+                      Apply to the fellowship <ArrowUpRight className="ml-1" size={16} />
                     </a>
                   )}
                 </AccordionContent>

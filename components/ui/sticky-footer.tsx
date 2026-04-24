@@ -45,9 +45,10 @@ export function StickyFooter({ className, ...props }: StickyFooterProps) {
               <AnimatedContainer className="w-full min-w-64 max-w-sm space-y-4">
                 <FrameIcon className="size-8 text-[#9FD6C2]" />
                 <p className="mt-8 text-sm leading-6 text-[#E1E0CC]/62 md:mt-0">
-                  Studio RTF trains and evaluates serious AI builders through
-                  live, project-based fellowship work. Top performers may be
-                  considered for paid Studio RTF projects when there is a fit.
+                  Studio RTF builds AI agents for real business workflows. The
+                  Fellowship turns those patterns into a hands-on builder
+                  program for people who want practical projects, sharper systems
+                  thinking, and a portfolio they can explain.
                 </p>
                 <div className="flex gap-2">
                   {socialLinks.map((link) => (
@@ -140,15 +141,15 @@ const footerLinkGroups: FooterLinkGroup[] = [
       { title: "Project Reviews", href: "#curriculum" },
       { title: "Final Demo Day", href: "#curriculum" },
       { title: "Evaluation Criteria", href: "#opportunity" },
-      { title: "Paid Project Consideration", href: "#opportunity" },
+      { title: "Optional Project Invitations", href: "#opportunity" },
       { title: "FAQ", href: "#faq" },
     ],
   },
   {
     label: "Studio RTF",
     links: [
-      { title: "Builder Environment", href: "#program" },
-      { title: "Client-Style Workflows", href: "#builds" },
+      { title: "Hands-On Builder Program", href: "#program" },
+      { title: "Real Business Workflows", href: "#builds" },
       { title: "Studio Frameworks", href: "#pricing" },
       { title: "Opportunity", href: "#opportunity" },
       { title: "Founding Cohort", href: "#apply" },

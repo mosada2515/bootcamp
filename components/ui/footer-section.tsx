@@ -35,7 +35,7 @@ const footerLinks: FooterSection[] = [
   {
     label: "Studio RTF",
     links: [
-      { title: "Builder selection", href: "#program" },
+      { title: "Why Studio RTF", href: "#program" },
       { title: "Opportunity", href: "#opportunity" },
       { title: "Final demo", href: "#curriculum" },
       { title: "FAQ", href: "#faq" },
@@ -74,8 +74,8 @@ export function Footer() {
               Studio RTF Agent Builder Fellowship
             </p>
             <p className="mt-3 max-w-sm text-sm leading-6 text-[#E1E0CC]/58">
-              A selective, application-based environment for serious builders learning
-              to ship useful AI agents for business workflows.
+              A selective, application-based fellowship for serious builders learning
+              to ship AI agents businesses actually pay for.
             </p>
           </div>
           <p className="text-sm text-[#E1E0CC]/48">

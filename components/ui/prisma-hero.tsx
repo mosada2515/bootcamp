@@ -146,7 +146,7 @@ const PrismaHero = () => {
             transition={{ duration: 0.7, delay: 0.2, ease: studioEase }}
             className="mb-6 inline-flex rounded-full border border-[#E1E0CC]/20 bg-black/45 px-4 py-2 text-xs text-[#E1E0CC]/80 backdrop-blur-md"
           >
-            4-week private cohort · Application-based · Founding class
+            4-week AI Agent Builder Fellowship · Application-based · Founding cohort
           </motion.div>
 
           <div className="grid grid-cols-12 items-end gap-5">
@@ -155,7 +155,7 @@ const PrismaHero = () => {
                 className="text-7xl font-medium leading-[0.84] text-[#E1E0CC] sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[11rem]"
                 style={{ letterSpacing: 0 }}
               >
-                <WordsPullUp text="Agent Builders" showAsterisk />
+                <WordsPullUp text="AI Agent Builder" showAsterisk />
               </h1>
             </div>
 
@@ -167,8 +167,10 @@ const PrismaHero = () => {
                 className="max-w-xl text-sm text-[#E1E0CC]/78 sm:text-base md:text-lg"
                 style={{ lineHeight: 1.25 }}
               >
-                A selective Studio RTF fellowship for ambitious builders who want to learn
-                how to build, deploy, and sell real AI agents for businesses.
+                Build AI agents businesses actually pay for. In 4 weeks, ship
+                real agents for lead response, appointment booking, follow-up,
+                and workflow automation. Top performers may be invited to paid
+                Studio RTF projects.
               </motion.p>
 
               <motion.div
