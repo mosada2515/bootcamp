@@ -312,6 +312,8 @@ export default function Home() {
               This is a selective 4-week AI Agent Builder Fellowship where builders
               ship production-style AI agents for real business workflows: inbound
               lead response, booking, follow-up, CRM updates, and human handoff.
+              You will be learning the stacks that provide real value to businesses, 
+              with the same frameworks and patterns used in Studio RTF projects.
               Every week, you build something portfolio-worthy.
             </p>
             <div className="mt-8 grid grid-cols-3 gap-6">
