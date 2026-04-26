@@ -35,7 +35,7 @@ const fadeUp = {
 };
 
 const credibility = [
-  "Built by Studio RTF",
+  "Built by Studio RTF - builders of Text Maddie",
   "Real business-agent projects",
   "4 weeks",
   "Portfolio-ready agent systems",

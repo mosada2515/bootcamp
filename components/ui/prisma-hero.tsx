@@ -167,10 +167,9 @@ const PrismaHero = () => {
                 className="max-w-xl text-sm text-[#E1E0CC]/78 sm:text-base md:text-lg"
                 style={{ lineHeight: 1.25 }}
               >
-                Build AI agents businesses actually pay for. In 4 weeks, ship
-                real agents for lead response, appointment booking, follow-up,
-                and workflow automation. Top performers may be invited to paid
-                Studio RTF projects.
+                Learn to build the AI texting agents behind Text Maddie.
+                In 4 weeks, you’ll ship real business agents for inbound lead response, appointment booking, follow-up, 
+                CRM updates, and human handoff — the same workflows companies pay agencies to automate.
               </motion.p>
 
               <motion.div
