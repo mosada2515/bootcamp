@@ -22,15 +22,14 @@ const requiredFields: Array<keyof ApplicationPayload> = [
 ];
 
 export async function POST(request: Request) {
-  const resendApiKey = process.env.RESEND_API_KEY;
-  const fromEmail = process.env.APPLICATION_FROM_EMAIL;
-  const toEmail = process.env.APPLICATION_TO_EMAIL || DEFAULT_TO_EMAIL;
+  const sheetsWebhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+  const sheetsSecret = process.env.GOOGLE_SHEETS_SECRET;
 
-  if (!resendApiKey || !fromEmail) {
+  if (!sheetsWebhookUrl || !sheetsSecret) {
     return NextResponse.json(
       {
         error:
-          "Email delivery is not configured. Set RESEND_API_KEY and APPLICATION_FROM_EMAIL.",
+          "Application storage is not configured. Set GOOGLE_SHEETS_WEBHOOK_URL and GOOGLE_SHEETS_SECRET.",
       },
       { status: 500 }
     );
@@ -51,6 +50,63 @@ export async function POST(request: Request) {
       { error: `Missing required field: ${missingField}` },
       { status: 400 }
     );
+  }
+
+  try {
+    await submitApplicationToGoogleSheets(payload, sheetsWebhookUrl, sheetsSecret);
+  } catch (error) {
+    console.error("Google Sheets application submission failed", error);
+
+    return NextResponse.json(
+      {
+        error:
+          "Could not save application. Check the server logs for the Google Sheets error.",
+      },
+      { status: 502 }
+    );
+  }
+
+  await sendOptionalApplicationEmail(payload);
+
+  return NextResponse.json({ ok: true });
+}
+
+async function submitApplicationToGoogleSheets(
+  payload: ApplicationPayload,
+  webhookUrl: string,
+  secret: string
+) {
+  const response = await fetch(webhookUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8",
+    },
+    body: JSON.stringify({
+      ...payload,
+      secret,
+      submittedAt: new Date().toISOString(),
+    }),
+  });
+
+  if (!response.ok) {
+    const details = await response.text();
+    throw new Error(`Google Sheets webhook failed with ${response.status}: ${details}`);
+  }
+
+  const result = await response.json().catch(() => null);
+
+  if (!result?.ok) {
+    throw new Error(result?.error ?? "Google Sheets webhook returned an error.");
+  }
+}
+
+async function sendOptionalApplicationEmail(payload: ApplicationPayload) {
+  const resendApiKey = process.env.RESEND_API_KEY;
+  const fromEmail = process.env.APPLICATION_FROM_EMAIL;
+  const toEmail = process.env.APPLICATION_TO_EMAIL || DEFAULT_TO_EMAIL;
+
+  if (!resendApiKey || !fromEmail) {
+    return;
   }
 
   const subject = `New AI Agent Builder Fellowship application: ${payload.fullName}`;
@@ -79,17 +135,7 @@ export async function POST(request: Request) {
       status: response.status,
       details,
     });
-
-    return NextResponse.json(
-      {
-        error:
-          "Could not send application email. Check the server logs for the Resend error.",
-      },
-      { status: 502 }
-    );
   }
-
-  return NextResponse.json({ ok: true });
 }
 
 function formatTextEmail(payload: ApplicationPayload) {
